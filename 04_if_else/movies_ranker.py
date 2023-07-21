@@ -70,11 +70,7 @@ def main():
     sorting_type = input('Please input sorting type: ')
     if sorting_type not in all_sorting_types:
         print(
-            'Sorry, "{}" is not a valid sorting type, please choose from '
-            '"{}", exit now'.format(
-                sorting_type,
-                '/'.join(all_sorting_types),
-            )
+            f"""Sorry, "{sorting_type}" is not a valid sorting type, please choose from "{'/'.join(all_sorting_types)}", exit now"""
         )
         return
 

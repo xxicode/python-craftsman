@@ -16,10 +16,7 @@ def delayed_start(func=None, *, duration=1):
 
         return wrapper
 
-    if func is None:
-        return decorator
-    else:
-        return decorator(func)
+    return decorator if func is None else decorator(func)
 
 
 @delayed_start

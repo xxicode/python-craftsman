@@ -73,16 +73,14 @@ def find_potential_customers_v1():
     :return: 通过 Generator 返回符合条件的旅客记录
     """
     for puket_record in users_visited_puket:
-        is_potential = True
-        for nz_record in users_visited_nz:
-            if (
+        is_potential = not any(
+            (
                 puket_record['first_name'] == nz_record['first_name']
                 and puket_record['last_name'] == nz_record['last_name']
                 and puket_record['phone_number'] == nz_record['phone_number']
-            ):
-                is_potential = False
-                break
-
+            )
+            for nz_record in users_visited_nz
+        )
         if is_potential:
             yield puket_record
 
@@ -142,9 +140,9 @@ class VisitRecord:
 
 def find_potential_customers_v3():
     # 转换为 VisitRecord 对象后，计算集合差值
-    return set(VisitRecord(**r) for r in users_visited_puket) - set(
+    return {VisitRecord(**r) for r in users_visited_puket} - {
         VisitRecord(**r) for r in users_visited_nz
-    )
+    }
 
 
 for record in find_potential_customers_v3():
@@ -163,9 +161,9 @@ class VisitRecordDC:
 
 
 def find_potential_customers_v4():
-    return set(VisitRecordDC(**r) for r in users_visited_puket) - set(
+    return {VisitRecordDC(**r) for r in users_visited_puket} - {
         VisitRecordDC(**r) for r in users_visited_nz
-    )
+    }
 
 
 print('---')

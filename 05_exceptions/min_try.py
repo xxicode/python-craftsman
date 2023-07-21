@@ -42,7 +42,7 @@ def save_website_title(url, filename):
     if not obj:
         print('save failed: title tag not found in page content')
         return False
-    title = obj.group(1)
+    title = obj[1]
 
     try:
         with open(filename, 'w') as fp:

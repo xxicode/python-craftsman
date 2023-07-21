@@ -22,7 +22,7 @@ class SiteSourceGrouper:
 
         groups = Counter()
         for elem in elems:
-            groups.update([elem.text])
+            groups |= [elem.text]
         return groups
 
 

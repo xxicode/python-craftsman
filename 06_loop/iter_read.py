@@ -58,7 +58,7 @@ def read_file_digits(fp, block_size=1024 * 8):
 def count_digits_v4(fname):
     count = 0
     with open(fname) as file:
-        for num in read_file_digits(file):
+        for _ in read_file_digits(file):
             count += 1
     return count
 

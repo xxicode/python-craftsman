@@ -57,10 +57,7 @@ class User(Model):
 
     def get_related_posts_count(self) -> int:
         """获取与用户有关的帖子总数"""
-        value = 0
-        for _ in self.list_related_posts():
-            value += 1
-        return value
+        return sum(1 for _ in self.list_related_posts())
 
 
 class Admin(User):

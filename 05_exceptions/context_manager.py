@@ -9,9 +9,7 @@ class ignore_closed:
         pass
 
     def __exit__(self, exc_type, exc_value, traceback):
-        if exc_type == AlreadyClosedError:
-            return True
-        return False
+        return exc_type == AlreadyClosedError
 
 
 with ignore_closed():

@@ -16,7 +16,7 @@ class UniqueVisitorAnalyzer:
 
         :return: 独立访客数
         """
-        for entry in self.get_log_entries():
+        for _ in self.get_log_entries():
             ...  # 省略：根据 entry.user_id 统计 UV 并返回结果
 
     def match_news_pattern(self, path):
@@ -83,4 +83,4 @@ class Top10CommentsAnalyzer(UniqueVisitorAnalyzer):
         :return: 仅当路径是评论点赞 API 时，返回 ID，否则返回 None
         """
         matched_obj = re.match('/comments/(.*)/up_votes/', path)
-        return matched_obj and matched_obj.group(1)
+        return matched_obj and matched_obj[1]

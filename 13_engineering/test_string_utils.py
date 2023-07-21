@@ -19,10 +19,8 @@ import random
 @pytest.fixture(scope='session')
 def random_token() -> str:
     """生成随机 token"""
-    token_l = []
     char_pool = string.ascii_lowercase + string.digits
-    for _ in range(32):
-        token_l.append(random.choice(char_pool))
+    token_l = [random.choice(char_pool) for _ in range(32)]
     return ''.join(token_l)
 
 

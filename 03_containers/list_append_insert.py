@@ -1,8 +1,6 @@
 def list_append():
     """不断往尾部追加"""
-    l = []
-    for i in range(5000):
-        l.append(i)
+    l = list(range(5000))
 
 
 def list_insert():

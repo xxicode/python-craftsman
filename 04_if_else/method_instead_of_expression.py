@@ -7,9 +7,5 @@ if (
     and (user.sex == 'female' or user.level > 3)
 ):
     user.add_coins(10000)
-    return
-
-
 if activity.allow_new_user() and user.match_activity_condition():
     user.add_coins(10000)
-    return

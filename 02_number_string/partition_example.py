@@ -4,10 +4,7 @@
 def extract_value(s):
     items = s.split(':')
     # 因为 s 不一定会包含 ':'，所以需要对结果长度进行判断
-    if len(items) == 2:
-        return items[1]
-    else:
-        return ''
+    return items[1] if len(items) == 2 else ''
 
 
 print(repr(extract_value('name:piglei')))

@@ -16,7 +16,7 @@ PATHS = (
     "/admin/",
 )
 
-for i in range(10000):
+for _ in range(10000):
     path = random.choice(PATHS)
     time_cost = random.randint(10, 2000)
     print(f"{path} {time_cost}")

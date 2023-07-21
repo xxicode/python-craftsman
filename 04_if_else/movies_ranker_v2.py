@@ -53,8 +53,7 @@ def get_sorted_movies(movies, sorting_type):
     except KeyError:
         raise RuntimeError(f'Unknown sorting type: {sorting_type}')
 
-    sorted_movies = sorted(movies, key=key_func, reverse=reverse)
-    return sorted_movies
+    return sorted(movies, key=key_func, reverse=reverse)
 
 
 all_sorting_types = ('name', 'rating', 'year', 'random')
@@ -65,11 +64,7 @@ def main():
     sorting_type = input('Please input sorting type: ')
     if sorting_type not in all_sorting_types:
         print(
-            'Sorry, "{}" is not a valid sorting type, please choose from '
-            '"{}", exit now'.format(
-                sorting_type,
-                '/'.join(all_sorting_types),
-            )
+            f"""Sorry, "{sorting_type}" is not a valid sorting type, please choose from "{'/'.join(all_sorting_types)}", exit now"""
         )
         return
 

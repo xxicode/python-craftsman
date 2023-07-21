@@ -72,7 +72,7 @@ def analyze_v2():
     for path, result in path_groups.items():
         print(f'== Path: {path}')
         print(f'   Total requests: {result.total_requests()}')
-        print(f'   Performance:')
+        print('   Performance:')
         for level_name, count in result.items():
             print(f'     - {level_name}: {count}')
 

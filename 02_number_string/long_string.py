@@ -15,9 +15,7 @@ def main():
                  "process. Please contact your administrator."))
 
 def main():
-    # if user.is_active:
-    if True:
-        message = textwrap.dedent("""\
+    message = textwrap.dedent("""\
             Welcome, here is your movie list:
             - Jaw (1975)
             - The Shining (1980)

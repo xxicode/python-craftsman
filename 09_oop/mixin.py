@@ -7,7 +7,7 @@ class InfoDumperMixin:
 
     def dump_info(self):
         d = self.__dict__
-        print("Number of members: {}".format(len(d)))
+        print(f"Number of members: {len(d)}")
         print("Details:")
         for key, value in d.items():
             print(f'  - {key}: {value}')

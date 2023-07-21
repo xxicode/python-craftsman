@@ -19,11 +19,7 @@ class FancyLogger:
 
     def log(self, message):
         """打印日志"""
-        if self.output_type == OutputType.FILE:
-            ...
-        elif self.output_type == OutputType.REDIS:
-            ...
-        elif self.output_type == OutputType.ES:
+        if self.output_type in [OutputType.FILE, OutputType.REDIS, OutputType.ES]:
             ...
         else:
             raise TypeError('output type invalid')

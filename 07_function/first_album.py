@@ -10,7 +10,7 @@ ITUNES_API_ENDPOINT = 'https://itunes.apple.com/search'
 
 def command_first_album():
     """通过脚本输入查找并打印歌手第一张专辑信息"""
-    if not len(sys.argv) == 2:
+    if len(sys.argv) != 2:
         print(f'usage: python {sys.argv[0]} {{SEARCH_TERM}}')
         sys.exit(1)
 
@@ -33,7 +33,7 @@ def command_first_album():
     try:
         albums = resp.json()['results']
     except JSONDecodeError:
-        print(f'Error: response is not valid JSON format')
+        print('Error: response is not valid JSON format')
         sys.exit(2)
     if not albums:
         print(f'Error: no albums found for artist "{term}"')

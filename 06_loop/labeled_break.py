@@ -38,8 +38,7 @@ def find_first_word(fp, prefix):
 
 
 def print_first_word(fp, prefix):
-    first_word = find_first_word(fp, prefix)
-    if first_word:
+    if first_word := find_first_word(fp, prefix):
         print(f'Found the first word startswith "{prefix}": "{first_word}"')
     else:
         print(f'Word starts with "{prefix}" was not found.')

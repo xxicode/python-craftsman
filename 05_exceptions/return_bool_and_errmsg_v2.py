@@ -61,4 +61,3 @@ class CreateItemError(Exception):
 
 
 raise CreateItemError('name_too_long', 'name of item is too long')
-raise CreateItemError('items_full', 'items is full')

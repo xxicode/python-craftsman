@@ -40,7 +40,7 @@ def analyze_v1():
         print(f'== Path: {path}')
         total = sum(result.values())
         print(f'   Total requests: {total}')
-        print(f'   Performance:')
+        print('   Performance:')
 
         # 在输出结果前，按照“性能级别”在 PagePerfLevel 里面的顺序排列，小于 100 毫秒
         # 的在最前面

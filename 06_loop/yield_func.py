@@ -1,10 +1,6 @@
 def sum_even_only(numbers):
     """对 numbers 里面所有的偶数求和"""
-    result = 0
-    for num in numbers:
-        if num % 2 == 0:
-            result += num
-    return result
+    return sum(num for num in numbers if num % 2 == 0)
 
 
 def even_only(numbers):
@@ -15,10 +11,7 @@ def even_only(numbers):
 
 def sum_even_only_v2(numbers):
     """对 numbers 里面所有的偶数求和"""
-    result = 0
-    for num in even_only(numbers):
-        result += num
-    return result
+    return sum(even_only(numbers))
 
     # return sum(only_even(numbers))
 

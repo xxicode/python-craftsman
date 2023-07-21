@@ -45,9 +45,7 @@ class Range7:
 
     def num_is_valid(self, num):
         """判断数字是否满足要求"""
-        if num == 0:
-            return False
-        return num % 7 == 0 or '7' in str(num)
+        return False if num == 0 else num % 7 == 0 or '7' in str(num)
 
 
 class _Range7:
@@ -82,9 +80,7 @@ class Range7Iterator:
             self.current += 1
 
     def num_is_valid(self, num):
-        if num == 0:
-            return False
-        return num % 7 == 0 or '7' in str(num)
+        return False if num == 0 else num % 7 == 0 or '7' in str(num)
 
 
 numbers = Range7(0, 20)

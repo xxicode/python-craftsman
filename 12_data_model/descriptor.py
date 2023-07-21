@@ -43,10 +43,7 @@ class IntegerField:
 
     def __get__(self, instance, owner=None):
         # 当不是通过实例访问时，直接返回描述符对象，这是最常见的做法
-        if not instance:
-            return self
-        # 返回保存在实例字典里的值
-        return instance.__dict__['_integer_field']
+        return self if not instance else instance.__dict__['_integer_field']
 
     def __set__(self, instance, value):
         # 校验后将值保存在实例字典里
@@ -85,10 +82,7 @@ class IntegerField:
         pass
 
     def __get__(self, instance, owner=None):
-        if not instance:
-            return self
-        # 在数据存取时，使用动态的 self._name
-        return instance.width
+        return self if not instance else instance.width
         # return instance.__dict__[self._name]
 
     def __set__(self, instance, value):

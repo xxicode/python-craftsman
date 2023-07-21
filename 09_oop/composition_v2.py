@@ -15,7 +15,7 @@ class UniqueVisitorAnalyzer:
 
         :return: 独立访客数
         """
-        for entry in self.get_log_entries():
+        for _ in self.get_log_entries():
             ...  # 省略：根据 entry.user_id 统计 UV 并返回结果
 
     def get_log_entries(self):
@@ -89,8 +89,7 @@ class Top10CommentsAnalyzer(UniqueVisitorAnalyzer):
     def get_log_entries(self):
         """获取当天所有日志记录"""
         for line in self.log_reader.read_lines():
-            entry = self.log_parser.parse(line)
-            yield entry
+            yield self.log_parser.parse(line)
 
     def extract_comment_id(self, path):
         """
@@ -100,4 +99,4 @@ class Top10CommentsAnalyzer(UniqueVisitorAnalyzer):
         :return: 仅当路径是评论点赞 API 时，返回 ID，否则返回 None
         """
         matched_obj = re.match('/comments/(.*)/up_votes/', path)
-        return matched_obj and matched_obj.group(1)
+        return matched_obj and matched_obj[1]

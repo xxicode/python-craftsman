@@ -3,12 +3,7 @@
 
 def remove_odd_mul_100(numbers):
     """剔除奇数并乘 100"""
-    results = []
-    for number in numbers:
-        if number % 2 == 1:
-            continue
-        results.append(number * 100)
-    return results
+    return [number * 100 for number in numbers if number % 2 != 1]
 
 
 numbers = [3, 4, 12, 17]

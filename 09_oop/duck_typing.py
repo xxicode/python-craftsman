@@ -11,8 +11,7 @@ class StringList:
         return ''.join(self.strings)
 
     def __iter__(self):
-        for s in self.strings:
-            yield s
+        yield from self.strings
 
 
 def count_vowels(fp):

@@ -34,11 +34,13 @@ def magic_bubble_sort(numbers: List[int]):
             # 交换位置的两个条件：
             # - 前面是偶数，后面是奇数
             # - 前面和后面同为奇数或者偶数，但是前面比后面大
-            if current_is_even and not next_is_even:
+            if (
+                current_is_even
+                and not next_is_even
+                or current_is_even == next_is_even
+                and current > next_
+            ):
                 should_swap = True
-            elif current_is_even == next_is_even and current > next_:
-                should_swap = True
-
             if should_swap:
                 numbers[i], numbers[i + 1] = numbers[i + 1], numbers[i]
         stop_position -= 1

@@ -18,7 +18,7 @@ class QueryAlbumsError(Exception):
 
 def command_first_album():
     """通过输入参数查找并打印歌手第一张专辑信息"""
-    if not len(sys.argv) == 2:
+    if len(sys.argv) != 2:
         print(f'usage: python {sys.argv[0]} {{SEARCH_TERM}}')
         sys.exit(1)
 

@@ -5,8 +5,5 @@ names = ['foo', 'bar', 'foobar']
 for name in names:
     print(len(name))
 
-i = 0
-
-while i < len(names):
-    print(len(names[i]))
-    i += 1
+for name_ in names:
+    print(len(name_))
